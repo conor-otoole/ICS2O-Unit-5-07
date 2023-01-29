@@ -7,7 +7,7 @@
 "use strict"
 
 /**
- * Check service worker.
+ * Check servie worker.
  */
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/ICS2O-Unit-5-07/sw.js", {
@@ -16,24 +16,18 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function runs an algorithm
+ * This function displays an alert.
  */
-function adding() {
-  //variables
-  let numberOne = parseFloat(document.getElementById("numberOne").value)
-  let sum = null
-  //restart in number is negative
-  if (numberOne < 0) {
-    document.getElementById("restart").innerHTML =
-      "Number is negative. Please reload the page."
+function myButtonClicked() {
+  var number = parseFloat(document.getElementById("number-input").value)
+  var sum = 0
+  var counter = 0
+  var loop = 0
+
+  for (let loop = 0; loop < number; ) {
+    loop++
+    sum = sum + loop
+    document.getElementById("hello-world").innerHTML =
+      "You get " + sum + ".<br>"
   }
-  //Factorial adding function
-  else {
-    while (numberOne > 0) {
-      sum = sum + numberOne
-      numberOne = numberOne - 1
-    }
-  }
-  //output
-  document.getElementById("output").innerHTML = sum
 }
